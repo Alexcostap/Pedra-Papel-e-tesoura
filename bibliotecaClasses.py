@@ -19,9 +19,10 @@ class Pessoa:
     def parouComer(self):
         if self.comendo == True:
             print(f"{self.nome} parou de comer {self.comida}")
+            self.comendo = False
         else:
             print(f"{self.nome} não esta comendo")
-            self.comendo = False
+
 
     def falar(self):
         if self.falando == True:
@@ -33,9 +34,10 @@ class Pessoa:
     def pararFalar(self):
         if self.falando == True:
             print(f"{self.nome} parou de falar")
+            self.falando = False
         else:
             print(f"Não estava falando")
-            self.falando = False
+
 
     def dormir(self):
         if self.dormindo == True:
@@ -46,9 +48,48 @@ class Pessoa:
     def acordou(self):
         if self.dormindo == True:
             print("Acordou")
+            self.dormindo = False
         else:
             print(f"{self.nome} estava acordado")
-            self.dormindo = False
+
+
+class Animal():
+    def __init__(self,nome,cor):
+        self.nome = nome
+        self.cor = cor
+
+    def comer(self):
+        print(f"O {self.nome} foi comer")
+
+    def emitirSom(self):
+        print(f"O {self.nome} emitindo som")
+class Gato(Animal):
+    def __init__(self,nome, cor):
+        super().__init__(nome, cor)
+
+    def emitirSom(self):
+        print(f"O {self.nome} miando")
+
+class Cachorro(Animal):
+    def __init__(self,nome, cor):
+        super().__init__(nome, cor)
+
+    def emitirSom(self):
+        print(f"O {self.nome} está latindo")
+
+class Gado(Animal):
+    def __init__(self,nome, cor):
+        super().__init__(nome, cor)
+
+    def emitirSom(self):
+        print(f"O {self.nome} está mugindo")
+class Bode(Animal):
+    def __init__(self,nome, cor):
+        super().__init__(nome, cor)
+
+    def emitirSom(self):
+        print(f"O {self.nome} está berrando")
+
 
 
 
